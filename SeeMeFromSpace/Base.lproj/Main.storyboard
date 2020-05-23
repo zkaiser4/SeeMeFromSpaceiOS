@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ji5-uD-gQT">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--See Me From Space-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="mapViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="SeeMeFromSpace" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="StQ-ag-Nl7">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="EdV-KA-Bdd"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="StQ-ag-Nl7" secondAttribute="trailing" id="Qb2-ll-UNk"/>
+                            <constraint firstItem="StQ-ag-Nl7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hLV-Zf-Zhv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="StQ-ag-Nl7" secondAttribute="bottom" id="kFM-Xe-iAN"/>
+                            <constraint firstItem="StQ-ag-Nl7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tuD-aL-KeZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="See Me From Space" id="lDv-Vm-k2u"/>
+                    <connections>
+                        <outlet property="mapView" destination="StQ-ag-Nl7" id="Xvj-8H-qf6"/>
+                        <segue destination="nQ0-g2-EAm" kind="show" identifier="showEarthImageViewController" id="s0s-Pe-IiE"/>
+                        <segue destination="s1f-lN-MwB" kind="show" identifier="showInfoViewController" id="AhG-b1-XLV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1045" y="138"/>
+        </scene>
+        <!--About See Me From Space-->
+        <scene sceneID="D7u-fW-ugl">
+            <objects>
+                <viewController storyboardIdentifier="infoViewController" id="s1f-lN-MwB" customClass="InfoViewController" customModule="SeeMeFromSpace" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dRl-tg-ab8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="nyz-HE-KBD">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O8G-N4-y1S">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="269.5"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <string key="text">See Me From Space utilizies NASA's Earth Imagery API to show users Landsat images for any location of their choosing by simply droping a pin to that location. Users can simply clear all the pins by shaking their device. The app will also notify the user if the image cannot be found. To learn more about the NASA Earth Imagery API please visit api.nasa.gov. </string>
+                                        <color key="textColor" red="0.21262854340000001" green="0.80351024869999998" blue="0.44304567579999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SpaceShuttle" translatesAutoresizingMaskIntoConstraints="NO" id="8WG-of-cbf">
+                                        <rect key="frame" x="0.0" y="269.5" width="414" height="269"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Copyright © 2020 ZKApps. All rights reserved." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gNQ-xE-5E9">
+                                        <rect key="frame" x="0.0" y="538.5" width="414" height="269.5"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.21262854340000001" green="0.80351024869999998" blue="0.44304567579999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="nyz-HE-KBD" firstAttribute="trailing" secondItem="nRU-wj-Lip" secondAttribute="trailing" id="5UX-6L-SxE"/>
+                            <constraint firstAttribute="bottom" secondItem="nyz-HE-KBD" secondAttribute="bottom" id="INm-NN-YtY"/>
+                            <constraint firstItem="nyz-HE-KBD" firstAttribute="top" secondItem="nRU-wj-Lip" secondAttribute="top" id="IdH-R9-sGe"/>
+                            <constraint firstItem="nyz-HE-KBD" firstAttribute="leading" secondItem="nRU-wj-Lip" secondAttribute="leading" id="Q81-Mk-zdL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nRU-wj-Lip"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="About See Me From Space" id="Cnl-j7-hvK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hvy-tt-3dN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1044.9275362318842" y="813.61607142857144"/>
+        </scene>
+        <!--Image for Location-->
+        <scene sceneID="V7W-XR-r4u">
+            <objects>
+                <viewController storyboardIdentifier="earthImageViewController" id="nQ0-g2-EAm" customClass="EarthImageViewController" customModule="SeeMeFromSpace" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="I3V-nT-HCW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hYi-ZN-xJT">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="hYi-ZN-xJT" firstAttribute="top" secondItem="En9-bA-hde" secondAttribute="top" id="0DI-dW-9Ea"/>
+                            <constraint firstItem="En9-bA-hde" firstAttribute="bottom" secondItem="hYi-ZN-xJT" secondAttribute="bottom" id="Nka-VS-yJc"/>
+                            <constraint firstItem="hYi-ZN-xJT" firstAttribute="leading" secondItem="En9-bA-hde" secondAttribute="leading" id="VM8-8i-dvW"/>
+                            <constraint firstItem="En9-bA-hde" firstAttribute="trailing" secondItem="hYi-ZN-xJT" secondAttribute="trailing" id="cpz-jH-vfd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="En9-bA-hde"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Image for Location" id="AL9-zD-kxH"/>
+                    <connections>
+                        <outlet property="earthImageView" destination="hYi-ZN-xJT" id="ekI-cM-8BQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rBX-1f-d20" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1928.985507246377" y="137.94642857142856"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PZs-sM-dY2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ji5-uD-gQT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ET4-Dk-YwB">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Ipi-U6-4RS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0ad-HQ-wMc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="SpaceShuttle" width="50" height="50"/>
+    </resources>
+</document>
